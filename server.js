@@ -111,6 +111,12 @@ getToken = function (headers) {
     }
 };
 
+apiRoutes.get('/logout', passport.authenticate('jwt', { session: false }), function (req, res) {
+    //req.session.destroy();
+    req.logout();
+    res.json({ success: true, msg: 'Logged out!' });
+});
+
 // connect the api routes under /api/*
 app.use('/api', apiRoutes);
 

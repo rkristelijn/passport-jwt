@@ -1,14 +1,25 @@
 {
-  "name": "node-rest-auth",
-  "main": "server.js",
-  "dependencies": {
-    "bcrypt": "^3.0.0",
-    "body-parser": "~1.9.2",
-    "express": "^4.16.3",
-    "jwt-simple": "^0.3.1",
-    "mongoose": "^5.2.16",
-    "morgan": "^1.9.1",
-    "passport": "^0.3.0",
-    "passport-jwt": "^1.2.1"
-  }
+    "name": "node-rest-auth",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js",
+        "test": "mocha test.js"
+    },
+    "dependencies": {
+        "bcrypt": "^3.0.0",
+        "body-parser": "~1.9.2",
+        "express": "^4.16.3",
+        "jwt-simple": "^0.3.1",
+        "mongoose": "^5.2.16",
+        "morgan": "^1.9.1",
+        "passport": "^0.3.0",
+        "passport-jwt": "^1.2.1"
+    },
+    "devDependencies": {
+        "assert": "^1.4.1",
+        "http": "0.0.0",
+        "mocha": "^5.2.0",
+        "nodemon": "^1.18.4",
+        "uuid": "^3.3.2"
+    }
 }
