@@ -17,6 +17,8 @@ note: you need yuml in Visual Studio Code @see https://github.com/jaime-olivares
 [browser]GET /api/members header:{Authorization:'JWT ...'}>[node]
 [node]{'success:true,msg:'Welcome'}.>[browser]
 ```
+
+But if you don't have yuml, here's the rendered file [sequence.yuml](sequence.yuml)
 ![uml](sequence.svg)
 
 # Installation
