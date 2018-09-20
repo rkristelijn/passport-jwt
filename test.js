@@ -19,29 +19,29 @@ describe('api', () => {
         });
     });
 
-    it('should be not work', (done) => {
-        let getOptions = {
-            host: 'localhost',
-            port: 8080,
-            path: '/api/memberinfo',
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            }
-        };
-        let request = http.request(getOptions, (res) => {
-            let body = '';
-            res.setEncoding('utf8');
-            res.on('data', chunk => body += chunk);
-            res.on('end', () => {
-                let res = JSON.parse(body);
-                console.log(res);
-                assert(res.success === true);
-                //assert(res.msg === `Welcome in the member area ${user1}!`);
-            });
-        });
-        request.end();
-    });
+    // it('should not work', (done) => {
+    //     let getOptions = {
+    //         host: 'localhost',
+    //         port: 8080,
+    //         path: '/api/memberinfo',
+    //         method: 'GET',
+    //         headers: {
+    //             'Content-Type': 'application/json;charset=utf-8'
+    //         }
+    //     };
+    //     let request = http.request(getOptions, (res) => {
+    //         let body = '';
+    //         res.setEncoding('utf8');
+    //         res.on('data', chunk => body += chunk);
+    //         res.on('end', () => {
+    //             let res = JSON.parse(body);
+    //             console.log(res);
+    //             assert(res.success === true);
+    //             //assert(res.msg === `Welcome in the member area ${user1}!`);
+    //         });
+    //     });
+    //     request.end();
+    // });
 
     it(`should accept signup of ${user1}`, (done) => {
         let postJSON = {
@@ -136,7 +136,7 @@ describe('api', () => {
                             res.on('data', chunk => body += chunk);
                             res.on('end', () => {
                                 let res = JSON.parse(body);
-                                console.log(res);
+                                //console.log(res);
                                 assert(res.success === true);
                                 assert(res.msg === 'Logged out!');
                                 done();
