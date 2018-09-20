@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 });
 
 // connect to database
-mongoose.connect(config.database);
+mongoose.connect(...config.database);
 
 // pass passport for configuration
 require('./config/passport')(passport);
