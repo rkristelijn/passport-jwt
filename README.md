@@ -2,6 +2,12 @@
 # Introduction
 This is a test project to use Login/Logout/secure routes using JSON Web Token and passport. I'm not happy with the result; the test is lame and I get errors.
 
+# Behavior
+```yuml
+// {type:sequence}
+[browser]>[server]
+```
+
 # Installation
 1. clone repo
 2. `npm i`
