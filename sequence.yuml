@@ -1,0 +1,12 @@
+// {type:sequence}
+// {generate:true}
+[browser]GET />[node]
+[node]Hello! The API is at http://localhost:8080/api.>[browser]
+[browser]POST /api/signup {user:x,password:x}>[node]
+[node]save user {user:x,password:x}>[mongodb]
+[node]response {success: true,msg:'...'}.>[browser]
+[browser]POST /api/authenticate {user:x,password:x}>[node]
+[node]check user {user:x,password:x}>[mongodb]
+[node]{success: true,token:'JWT ...'}.>[browser]
+[browser]GET /api/members header:{Authorization:'JWT ...'}>[node]
+[node]{'success:true,msg:'Welcome'}.>[browser]

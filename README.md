@@ -3,10 +3,21 @@
 This is a test project to use Login/Logout/secure routes using JSON Web Token and passport. I'm not happy with the result; the test is lame and I get errors.
 
 # Behavior
+note: you need yuml in Visual Studio Code @see https://github.com/jaime-olivares/yuml-diagram
 ```yuml
 // {type:sequence}
-[browser]>[server]
+[browser]GET />[node]
+[node]Hello! The API is at http://localhost:8080/api.>[browser]
+[browser]POST /api/signup {user:x,password:x}>[node]
+[node]save user {user:x,password:x}>[mongodb]
+[node]response {success: true,msg:'...'}.>[browser]
+[browser]POST /api/authenticate {user:x,password:x}>[node]
+[node]check user {user:x,password:x}>[mongodb]
+[node]{success: true,token:'JWT ...'}.>[browser]
+[browser]GET /api/members header:{Authorization:'JWT ...'}>[node]
+[node]{'success:true,msg:'Welcome'}.>[browser]
 ```
+![uml](sequence.svg)
 
 # Installation
 1. clone repo
